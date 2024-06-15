@@ -1,46 +1,24 @@
-import React, { useState } from 'react';
-import LoginForm from './LoginForm';
-import './App.css';
-import Title from './Title';
-import Navbar from './Navbar';
-import Body from './Body';
-import AboutUs from './AboutUs'; // Assuming you have an AboutUs component
-import Contact from './Contact'; // Assuming you have a Contact component
+import React from 'react';
+import { BrowserRouter as Router, Route, Routes, Navigate } from 'react-router-dom';
+import Login from './Login';
+import HomePage from './HomePage';
+import AboutUs from './AboutUs';
+import ContactUs from './ContactUs';
 
-const App = () => {
-  const [isLoggedIn, setIsLoggedIn] = useState(false);
-  const [activeSection, setActiveSection] = useState('home');
-
-  const handleLogin = () => {
-    setIsLoggedIn(true);
-  };
-
-  const renderSection = () => {
-    switch (activeSection) {
-      case 'home':
-        return <Body />;
-      case 'about':
-        return <AboutUs />;
-      case 'contact':
-        return <Contact />;
-      default:
-        return <Body />;
-    }
-  };
-
+function App() {
   return (
-    <div className="App">
-      {isLoggedIn ? (
-        <>
-          <Title />
-          <Navbar activeSection={activeSection} setActiveSection={setActiveSection} />
-          {renderSection()}
-        </>
-      ) : (
-        <LoginForm onLogin={handleLogin} />
-      )}
-    </div>
+    <Router>
+      <div>
+        <Routes>
+          <Route path="/" element={<Login />} />
+          <Route path="/home" element={<HomePage />} />
+          <Route path="/about" element={<AboutUs />} />
+          <Route path="/contact" element={<ContactUs />} />
+          <Route path="*" element={<Navigate to="/" />} />
+        </Routes>
+      </div>
+    </Router>
   );
-};
+}
 
 export default App;

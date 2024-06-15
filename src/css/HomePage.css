@@ -1,0 +1,116 @@
+/* css/HomePage.css */
+
+.home-container {
+    max-width: 800px;
+    margin: 0 auto;
+    padding: 20px;
+    background-color: #141414;
+  }
+  
+  .home-header {
+    text-align: center;
+    margin-bottom: 5px;
+  }
+  
+  .home-header h2 {
+    font-size: 56px;
+    color: #fff;
+  }
+  
+  .home-header nav ul {
+    list-style-type: none;
+    padding: 20px;
+    text-align: left; /* Align buttons to the left */
+    background: #212121;
+    border-radius: 10px;
+    width: 95%;
+    display: inline-block; /* Ensures the ul does not take full width */
+  }
+  
+  .home-header nav ul li {
+    display: inline;
+    margin-right: 10px;
+  }
+  
+  .home-header nav ul li button {
+    background: none;
+    border: none;
+    border-radius: 10px;
+    padding: 16px;
+    cursor: pointer;
+    text-decoration: underline;
+    font-size: 16px;
+    color: #fff;
+    font-weight: bold;
+    transition: color 0.5s ease-in-out;
+    text-decoration: none;
+    align-items: left;
+  }
+  
+  .home-header nav ul li button:hover {
+    background: rgb(73, 73, 73);
+  }
+  
+  /* Active button style */
+  .home-header nav ul li button.active {
+    background: rgb(255, 54, 54); /* Red background when active */
+  }
+  
+  .home-body {
+    background-color: #212121;
+    color: #fff;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    margin-bottom: 20px;
+  }
+  
+  .home-body h3 {
+    margin-bottom: 10px;
+  }
+  
+  .home-body p {
+    line-height: 1.6;
+  }
+  
+  .home-body form {
+    display: flex;
+    flex-direction: column;
+  }
+  
+  .home-body form div {
+    margin-bottom: 15px; /* Increased margin for better spacing */
+  }
+  
+  .home-body form label {
+    margin-bottom: 5px;
+  }
+  
+  .home-body form input,
+  .home-body form textarea {
+    padding: 10px; /* Increased padding for better size and spacing */
+    margin: 16px 0; /* Adjusted margin for better alignment */
+    border: 1px solid #555;
+    border-radius: 3px;
+    font-size: 16px;
+    width: 97%;
+    background-color: #212121;
+    color: #fff;
+  }
+  
+  .home-body form button {
+    margin-top: 20px;
+    padding: 10px;
+    background-color: rgb(255, 54, 54);
+    color: #fff;
+    border: none;
+    border-radius: 3px;
+    cursor: pointer;
+    font-size: 16px;
+    transition: background-color 0.3s ease-in-out;
+  }
+  
+  .home-body form button:hover {
+    background-color: #cc0000; /* Darker red on hover */
+  }
+  
