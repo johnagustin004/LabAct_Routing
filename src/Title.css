@@ -1,0 +1,11 @@
+.title {
+  position: absolute;
+  width: 61.4%;
+  top: 16%;
+  left: 20%;
+    text-align: center;
+    padding: 20px;
+    background: red;
+    color: #fff;
+  }
+  

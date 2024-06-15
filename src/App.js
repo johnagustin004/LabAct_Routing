@@ -1,25 +1,46 @@
-import logo from './logo.svg';
+import React, { useState } from 'react';
+import LoginForm from './LoginForm';
 import './App.css';
+import Title from './Title';
+import Navbar from './Navbar';
+import Body from './Body';
+import AboutUs from './AboutUs'; // Assuming you have an AboutUs component
+import Contact from './Contact'; // Assuming you have a Contact component
 
-function App() {
+const App = () => {
+  const [isLoggedIn, setIsLoggedIn] = useState(false);
+  const [activeSection, setActiveSection] = useState('home');
+
+  const handleLogin = () => {
+    setIsLoggedIn(true);
+  };
+
+  const renderSection = () => {
+    switch (activeSection) {
+      case 'home':
+        return <Body />;
+      case 'about':
+        return <AboutUs />;
+      case 'contact':
+        return <Contact />;
+      default:
+        return <Body />;
+    }
+  };
+
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+      {isLoggedIn ? (
+        <>
+          <Title />
+          <Navbar activeSection={activeSection} setActiveSection={setActiveSection} />
+          {renderSection()}
+        </>
+      ) : (
+        <LoginForm onLogin={handleLogin} />
+      )}
     </div>
   );
-}
+};
 
 export default App;

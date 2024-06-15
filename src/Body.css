@@ -1,0 +1,23 @@
+.body {
+  position: absolute;
+  top: 42%;
+  left: 20%;
+  padding: 20px;
+  max-width: 1570px;
+  margin: auto;
+  text-align: left;
+  background: #212121;
+  border-radius: 16px;
+}
+
+.body section {
+  margin-bottom: 40px;
+}
+
+.body h1 {
+  color: #fff;
+}
+
+.body p {
+  color: #f9f9f9;
+}
